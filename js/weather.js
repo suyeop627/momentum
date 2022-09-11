@@ -1,4 +1,5 @@
-const API_KEY = weatherAPI.apikey;
+//const API_KEY = weatherAPI.apikey;
+const API_KEY = "ee6a3dab36c3bd679253c120ff8d5de6";
 
 
 function onGeoOK(position) {
