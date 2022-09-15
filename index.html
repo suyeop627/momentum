@@ -38,7 +38,12 @@
       <div id="clock_wrap">
         <h2 id="clock">00:00:00</h2>
       </div>
-      
+      <div id = "search">
+        <form method=get action="http://www.google.co.kr/search" target="_blank">
+          <input type=text name=q size=25 maxlength=255 value="" placeholder="Google 검색">
+          <input type=submit name=btnG value="Search" >
+        </form>
+      </div>
       <div id="todo">
         <h1 id="timeLeft"></h1>
         <form id="todo-form">
@@ -46,10 +51,10 @@
         </form>
         <span id="highlight">Click todo to highlight</span>
         <ul id="todo-list"></ul>
-      
+
       </div>
   </section>
-  
+
   <footer>
     <div id="quote">
       <span></span>
@@ -69,6 +74,10 @@
 <script src="js/background.js"></script>
 <script src="js/todo.js"></script>
 <script src="js/api_key.js"></script>
-<script src="js/weather.js"></script>
+<script src="js/weather.js">
+  console.log(311.14 / .3533)
+
+</script>
+
 
 </html>

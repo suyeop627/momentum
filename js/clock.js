@@ -14,20 +14,30 @@ function getClock() {
   const timeLeft = document.getElementById("timeLeft")
 
   let tommorow;
-	tommorow = new Date();
-	tommorow.setHours(0);
-	tommorow.setMinutes(0);
-	tommorow.setSeconds(0);
-	tommorow.setDate(tommorow.getDate() + 1);
+  tommorow = new Date();
+  tommorow.setHours(0);
+  tommorow.setMinutes(0);
+  tommorow.setSeconds(0);
+  tommorow.setDate(tommorow.getDate() + 1);
 
   function getTimeLeft(){
-  const today = new Date();
-  const gap = Math.round((tommorow - today.getTime()) / 1000);
-  const day = Math.floor(gap / 86400);
-  const hours = Math.floor((gap - day * 86400) / 3600 % 3600);
-  const minutes = Math.floor((gap - hours * 3600) / 60 % 60);
-  const seconds = Math.floor((gap - minutes * 60) % 60); 
-  timeLeft.innerHTML =`${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m ${String(seconds).padStart(2,'0')}s left today` ;
+ 
+    const dd = tommorow.getTime()
+
+    const now = new Date()
+    const nn = now.getTime()
+  
+    const numForDivide = 1000*60*60*24
+    const dif = (dd-nn)/numForDivide
+    
+    const day = String(Math.floor(dif)).padStart(2, "0")
+    const hour = String(Math.floor((dif-day)*24)).padStart(2, "0")
+    const min = String(Math.floor(((dif-day)*24-hour)*60)).padStart(2, "0")
+    const sec = String(Math.floor((((dif-day)*24-hour)*60-min)*60)).padStart(2, "0")
+
+  
+  
+  timeLeft.innerHTML =`${String(hour).padStart(2,'0')}h ${String(min).padStart(2,'0')}m ${String(sec).padStart(2,'0')}s left today` ;
   }
   
   getTimeLeft();
